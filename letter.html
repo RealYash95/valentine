@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Our 1 Year ❤️</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body { overflow-y: scroll; text-align:center; }
+        .gallery img { height: 250px; border-radius: 20px; margin: 10px; }
+        .letter { max-width: 90%; margin: auto; font-size: 18px; padding: 20px; }
+    </style>
+</head>
+<body>
+
+<h1>365 Days With You 💕</h1>
+<h2 id="counter"></h2>
+
+<div class="gallery">
+    <img src="pic1.jpg">
+    <img src="pic2.jpg">
+    <img src="pic3.jpg">
+</div>
+
+<div class="letter">
+    <p id="typeText"></p>
+</div>
+
+<script>
+const text = "Yaha apna emotional letter likh dena ❤️ Happy 1 Year Anniversary & Happy Valentine's Day 💕";
+
+let i = 0;
+function typeWriter() {
+    if (i < text.length) {
+        document.getElementById("typeText").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, 40);
+    }
+}
+typeWriter();
+
+const startDate = new Date("2025-02-14"); // CHANGE THIS TO YOUR REAL DATE
+const today = new Date();
+const diffTime = today - startDate;
+const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+
+document.getElementById("counter").innerText = diffDays + " Days Together ❤️";
+</script>
+
+</body>
+</html>
